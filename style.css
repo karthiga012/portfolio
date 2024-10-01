@@ -1,0 +1,451 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    max-width: 1400px;
+    display: block;
+    margin: auto;
+    min-height: 100vh;
+    background: #191919;
+    font-family: sans-serif;
+}
+
+.navbar{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    background: #1a1a1a;
+}
+
+.link-group{
+    list-style: none;
+    display: flex;
+}
+
+.link a{
+    color: #fff;
+    opacity: 0.5;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 10px 30px;
+    margin: 0 20px;
+    line-height: 80px;
+    transition: .5s;
+    font-size: 20px;
+}
+
+.link a:hover, .link.active a{
+    opacity: 1;
+}
+.home-section.active,
+.project-section.active,
+.about-section.active,
+.skill-section.active,
+.education-section.active,
+.contact-section.active{
+    position: relative;
+    opacity: 1;
+    z-index: 8;
+}
+.home-section {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Flexbox to align items */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 0 150px;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+}
+
+.hero-heading {
+    color: #fff;
+    font-size: 70px;
+    text-transform: capitalize;
+    font-weight: 300;
+    text-align: center; /* Align text in the center */
+}
+
+
+.home-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 80vh;
+    width: 50%;
+    object-fit: cover;
+    opacity: 0.2;
+}
+
+
+/* about-section */
+
+.about-section{
+    width: 100%;
+    min-height: 100vh;
+    padding: 150px 100px 0;
+    position: relative;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+}
+
+.about{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 65%;
+    grid-gap: 40px;
+}
+
+
+.about-info{
+    text-align: center;
+    color: #fff;
+    opacity: 0.6;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.about-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+/* Skills Section */
+section {
+    display: none; /* Hide all sections by default */
+}
+
+section.active {
+    display: block; /* Only show the active section */
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the circles */
+    gap: 20px; /* Adjust spacing between circles */
+    padding: 20px 10px;
+    max-width: 1200px; /* Set a maximum width */
+    margin: 0 auto; /* Center the container on the page */
+}
+
+.skill-box {
+    flex: 0 1 calc(20% - 20px); /* Each box takes 20% of the width minus the gap */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.circle span {
+    font-size: 22px;
+    color: purple;
+    position: relative;
+    z-index: 1;
+}
+
+
+.skill-box p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+/* Center the Skills Heading */
+#skills .heading {
+    text-align: center; /* Add this */
+    font-size: 30px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+/* Keyframes for progress animations */
+@keyframes progressAnimation2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(calc(360deg * 0.85)); /* For 85% progress */
+    }
+}
+
+@keyframes progressAnimation3 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(calc(360deg * 0.75)); /* For 75% progress */
+    }
+}
+
+@keyframes progressAnimation4 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(calc(360deg * 0.80)); /* For 80% progress */
+    }
+}
+
+@keyframes progressAnimation5 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(calc(360deg * 0.70)); /* For 70% progress */
+    }
+}
+
+@keyframes progressAnimation6 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(calc(360deg * 0.75)); /* For 75% progress */
+    }
+}
+
+/* Apply animations to the skill boxes */
+.skill-box:nth-child(2) .circle::before {
+    animation: progressAnimation2 2s forwards; /* Change 2s to your preferred duration */
+}
+
+.skill-box:nth-child(3) .circle::before {
+    animation: progressAnimation3 2s forwards; /* Change 2s to your preferred duration */
+}
+
+.skill-box:nth-child(4) .circle::before {
+    animation: progressAnimation4 2s forwards; /* Change 2s to your preferred duration */
+}
+
+.skill-box:nth-child(5) .circle::before {
+    animation: progressAnimation5 2s forwards; /* Change 2s to your preferred duration */
+}
+
+.skill-box:nth-child(6) .circle::before {
+    animation: progressAnimation6 2s forwards; /* Change 2s to your preferred duration */
+}
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .skills-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .skill-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+/* timeline */
+
+.timeline{
+    display: block;
+    width: 100%;
+    margin: 150px auto;
+}
+
+.timeline .heading {
+    margin-bottom: 120px;
+    text-align: center; /* Center the text */
+    font-size: 40px; /* Adjust the size if needed */
+    font-weight: bold; /* Make the text bold */
+    color: white; /* Ensure it's readable */
+}
+
+
+.card{
+    width: 45%;
+    padding: 35px;
+    border-radius: 10px;
+    color: #fff;
+    display: block;
+    margin: -80px 0;
+    position: relative;
+    background: #f00;
+}
+
+.card:nth-child(even){
+    margin-left: auto;
+}
+
+.card:nth-child(even):before{
+    content: '';
+    position: absolute;
+    left: -15%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 5px solid #191919;
+    border-radius: 50%;
+}
+
+.card:nth-child(even):after{
+    content: '';
+    position: absolute;
+    left: -8.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7%;
+    height: 2px;
+    background: #fff;
+    z-index: -1;
+}
+
+.card:nth-child(odd):before{
+    content: '';
+    position: absolute;
+    right: -13%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 5px solid #191919;
+    border-radius: 50%;
+}
+
+.card:nth-child(even):after{
+    content: '';
+    position: absolute;
+    left: -8.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20%;
+    height: 2px;
+    background: #fff;
+    z-index: -1;
+}
+
+.card:nth-child(2), .card:nth-child(2):before{
+    background: #ff4f4f;
+}
+.card:nth-child(3), .card:nth-child(3):before{
+    background: #ffb84f;
+}
+.card:nth-child(4), .card:nth-child(4):before{
+    background: #3dca5c;
+}
+.card:nth-child(5), .card:nth-child(5):before{
+    background: #565252;
+}
+.card:nth-child(6), .card:nth-child(6):before{
+    background: #4fa0ff;
+}
+
+.card:nth-child(even) .card-body:before{
+    content: '';
+    position: absolute;
+    left: -12%;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    border: 1px dashed #fff;
+    z-index: -1;
+}
+
+.card-title{
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    margin-top: 50px;
+    padding: 40px 0;
+    background-color: black;
+    color: white;
+}
+
+#contact h2 {
+    font-size: 30px;
+    color: white; 
+    margin-bottom: 20px;
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    text-align: center; /* Ensure this is added */
+}
+
+#contact p {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.contact-link i {
+    font-size: 50px;
+    color: white; 
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.contact-link:hover i {
+    color: #ff0077; 
+}
+
+.contact-link span {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+
+.contact-link:hover span {
+    color: white; 
+}
+
+/* Responsive Design for Contact */
+@media (max-width: 768px) {
+    .contact-icons {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-link i {
+        font-size: 40px;
+    }
+}
